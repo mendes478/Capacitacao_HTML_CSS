@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!-- 
+  MAINboxd - Projeto da Capacitação HTML5 & CSS3 (MAIN Empresa Júnior)
+  Cada comentário [HTML] ou [CSS] indica um conceito do guia teórico.
+-->
+<html lang="pt-br">
+<head>
+  <!-- Metadados HTML -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAINboxd | Filmes, séries, livros e jogos da MAIN</title>
+
+  <!-- Fonte Space Grotesk (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- tag para estilização a partir do arquivo style.css -->
+  <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+
+  <!-- ========== HEADER (elemento de BLOCO semântico) ========== -->
+  <header>
+    <!--  h1 só existe UM por página. O span é um seletor para colocar estilo em uma parte específica do texto. -->
+    <h1 class="logo">MAIN<span>boxd</span></h1>
+
+    <!-- <nav> agrupa os links principais. <ul>/<li> = lista não ordenada, <a> = hiperlink -->
+    <nav>
+      <ul>
+        <li><a href="#recomendadas">Mídias Catalogadas</a></li>
+        <li><a href="#atividade">Diário</a></li>
+        <li><a href="#nova-midia">Membros</a></li>
+      </ul>
+    </nav>
+
+    <!-- <input> é um elemento VAZIO (sem tag de fechamento). -->
+    <input type="text" id="busca" placeholder="🔍 Buscar obra...">
+  </header>
+
+  <!-- ========== MAIN: conteúdo principal, com 4 seções ========== -->
+  <main>
+
+    <!-- ---------- SEÇÃO 1: Filmes recomendados ---------- -->
+    <section id="recomendadas">
+        
+        <h2>Mídias recomendadas para você</h2>
+        <!-- strong: tag de destaque, assim como em: tag de ênfase -->
+        <p>
+          Escolhidas pelos <strong>membros da MAIN</strong>, com <em>muito carinho</em> e zero algoritmo.
+        </p>
+
+        <!-- Lista Ordenada (ol), cada item deve ser um elemento <li> -->
+        <h3>Mais bem avaliadas da semana</h3>
+        <ol>
+          <li>Interestelar</li>
+          <li>Hollow Knight</li>
+          <li>Arcane</li>
+        </ol>
+
+            <img src="imagem/new-arcane-season-2-poster-revealed-v0-rvjt4d0qkshd1.webp" alt="arcane" width="300" height="450">
+            <span class="badge">Série</span>
+            <h4>Arcane</h4>
+            <p >Fortiche, 2021</p>
+
+          
+            <img src="https://placehold.co/300x450/D900B1/FFFFFF?text=Duna" alt="Capa do livro Duna">
+            <span class="badge">Livro</span>
+            <h4>Duna</h4>
+            <p>Frank Herbert, 1965</p>
+
+            <img src="https://placehold.co/300x450/171717/0BD4BC?text=Clean+Code" alt="Capa do livro Código Limpo">
+            <span class="badge">Livro</span>
+            <h4>Código Limpo</h4>
+            <p>Robert C. Martin, 2008</p>
+
+
+            <img src="https://placehold.co/300x450/0BD4BC/171717?text=Hollow+Knight" alt="Arte do jogo Hollow Knight">
+            <span class="badge">Jogo</span>
+            <h4>Hollow Knight</h4>
+            <p>Team Cherry, 2017</p>
+
+            <img src="https://placehold.co/300x450/D900B1/FFFFFF?text=Stardew+Valley" alt="Arte do jogo Stardew Valley">
+            <span class="badge">Jogo</span>
+            <h4>Stardew Valley</h4>
+            <p>ConcernedApe, 2016</p>
+      
+    </section>
+
+    <section id="atividade">
+        <h2>Atividade recente na plataforma</h2>
+        <p> O que a galera da MAIN assistiu, leu e jogou nos últimos dias. </p>
+
+          <table>
+            <thead>
+            <!-- tr: table row, th: table header -->
+              <tr>
+                <th>Membro</th>
+                <th>Ação / Categoria</th>
+                <th>Obra</th>
+                <th>Nota</th>
+                <th>Data</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ana Souza</td>
+                <td>Assistiu (Filme)</td>
+                <td>Interestelar</td>
+                <td >★★★★★</td>
+                <td>24/10/2026</td>
+              </tr>
+              <tr>
+                <td>Bruno Lima</td>
+                <td>Leu (Livro)</td>
+                <td>Duna</td>
+                <td >★★★★☆</td>
+                <td>23/10/2026</td>
+              </tr>
+              <tr>
+                <td>Carla Dias</td>
+                <td>Jogou (Jogo)</td>
+                <td>Hollow Knight</td>
+                <td >★★★★★</td>
+                <td>22/10/2026</td>
+              </tr>
+              <tr>
+                <td>Diego Reis</td>
+                <td>Assistiu (Série)</td>
+                <td>Dark</td>
+                <td >★★★★☆</td>
+                <td>20/10/2026</td>
+              </tr>
+              <tr>
+                <td>Elisa Moura</td>
+                <td>Leu (Livro)</td>
+                <td>Código Limpo</td>
+                <td >★★★☆☆</td>
+                <td>19/10/2026</td>
+              </tr>
+              <tr>
+                <td>Fábio Alves</td>
+                <td>Assistiu (Série)</td>
+                <td>Arcane</td>
+                <td>★★★★★</td>
+                <td>17/10/2026</td>
+              </tr>
+            </tbody>
+          </table>
+    </section>
+
+    </main>
+
+</body>
+</html>
