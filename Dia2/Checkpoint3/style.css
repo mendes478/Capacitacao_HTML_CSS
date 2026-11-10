@@ -1,0 +1,207 @@
+/* =====================================================
+   MAINboxd - style.css (Checkpoint 3 do Dia 2)
+   Estilo neo-brutalista: bordas grossas, sombras duras
+   e seções bem separadas por cor.
+   ===================================================== */
+
+/* ---------- VARIÁVEIS (paleta da MAIN) ----------
+   :root guarda valores reutilizáveis. Para mudar uma cor
+   do site inteiro, basta mudar aqui. */
+:root {
+  --preto: #171717;
+  --magenta: #D900B1;
+  --turquesa: #0BD4BC;
+  --branco: #FFFFFF;
+
+  --fonte: "Space Grotesk", sans-serif;
+  --borda: 3px solid;
+}
+
+/* ---------- RESET E BASE ----------
+   * (seletor universal) pega TODOS os elementos.
+   box-sizing: border-box faz width/height já contarem o padding e a borda. */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--preto);
+  font-family: var(--fonte);
+  color: var(--branco);
+  line-height: 1.5;
+}
+
+/* ---------- HEADER (fundo magenta) ----------
+   FLEXBOX: justify-content alinha no eixo horizontal,
+   align-items alinha no eixo vertical. */
+header {
+  background-color: var(--magenta);
+  padding: 16px 24px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;     /* tira as bolinhas da lista */
+  gap: 32px;
+}
+
+nav a {
+  display: block;       /* link vira bloco para aceitar padding e borda por completo */
+  background-color: var(--branco);
+  color: var(--preto);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 8px 14px;
+  border: var(--borda) var(--preto);
+}
+
+/* ESPECIFICIDADE: primeiro estilizamos TODOS os inputs pela TAG... */
+input {
+  font-family: inherit;   /* campos não herdam a fonte sozinhos */
+  font-size: 1rem;
+  padding: 12px;
+  background-color: var(--preto);
+  color: var(--branco);
+}
+
+/* PSEUDO-CLASSE :focus = campo selecionado (clicado ou via Tab) */
+input:focus {
+  outline: 3px solid var(--turquesa);
+  outline-offset: 1px;
+}
+
+/* ...e o #busca (ID) vence a regra de tag, porque ID tem prioridade maior.
+   Por isso o contorno da busca fica BRANCO e não turquesa. */
+#busca {
+  background-color: var(--preto);
+  color: var(--branco);
+  border-color: var(--preto);
+  width: 260px;
+}
+
+#busca:focus {
+  outline-color: var(--branco);
+}
+
+/* ---------- SEÇÃO 1: vitrine em GRID (fundo preto) ----------
+   .secao = estilo COMPARTILHADO por todas as seções. */
+.secao {
+  background-color: var(--preto);
+  border-top: 4px solid var(--preto);
+  padding: 72px 24px;
+}
+
+.conteudo {
+  max-width: 1100px;    /* limita a largura... */
+  margin: 0 auto;       /* ...e centraliza (margin auto nas laterais) */
+}
+
+.subtitulo {
+  margin-bottom: 32px;
+}
+
+.ranking {
+  margin: 8px 0 40px 24px;   /* cima, direita, baixo, esquerda */
+}
+
+/* ::marker = pseudo-elemento: o número de cada item da lista */
+.ranking li::marker {
+  color: var(--magenta);
+  font-weight: 700;
+}
+
+/* CSS GRID: 4 colunas de mesmo tamanho (1fr = 1 fração do espaço) */
+.vitrine {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+.card {
+  background-color: var(--branco);
+  color: var(--preto);
+  padding: 12px;
+  border: var(--borda) var(--turquesa);
+}
+
+/* :hover = mouse em cima. translate move o card 4px para a esquerda e 4px para cima */
+.card:hover {
+  transform: translate(-4px, -4px);
+}
+
+.card img {
+  width: 100%;   /* a imagem acompanha a largura do card */
+  border: var(--borda) var(--preto);
+}
+
+/* <span> é INLINE: inline-block faz ele aceitar padding e margin verticais */
+.midia-classificacao {
+  display: inline-block;
+  background-color: var(--turquesa);
+  color: var(--preto);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 2px 10px;
+  border: 2px solid var(--preto);
+  margin: 12px 0 6px;   /* cima, laterais, baixo */
+}
+
+/* ##################################################################
+   >>>>>>>>>>>>>>>  INÍCIO DO CHECKPOINT 3 (código novo)  <<<<<<<<<<<<<<<
+   Tudo ACIMA desta linha já existia no Checkpoint 2.
+   ################################################################## */
+
+/* ---------- SEÇÃO 2: tabela (fundo branco) ----------
+   .secao-branco muda só a cor. Também cria duas variáveis
+   (--contorno e --sombra) que valem só DENTRO desta seção. */
+.secao-branco {
+  background-color: var(--branco);
+  color: var(--preto);
+  --contorno: var(--preto);
+  --sombra: var(--magenta);
+}
+
+.moldura-tabela {
+  overflow-x: auto;     /* no celular a tabela rola para o lado em vez de estourar a tela */
+  border: var(--borda) var(--contorno);
+  box-shadow: 8px 8px 0 var(--sombra);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;   /* junta as bordas das células */
+  background-color: var(--preto);
+  color: var(--branco);
+}
+
+th,
+td {
+  padding: 14px 18px;
+  text-align: left;
+}
+
+thead th {
+  background-color: var(--turquesa);
+  color: var(--preto);
+}
+
+/* :nth-child(even) seleciona as linhas PARES, criando o efeito zebrado */
+tbody tr:nth-child(even) {
+  background-color: #2B2B2B;
+}
+
+tbody tr:hover {
+  background-color: #3D3D3D;
+}
+
+.estrelas {
+  color: var(--turquesa);
+  white-space: nowrap;
+}

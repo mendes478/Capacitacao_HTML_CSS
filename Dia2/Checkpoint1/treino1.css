@@ -1,0 +1,81 @@
+:root {
+    --preto: #171717;
+    --magenta: #D900B1;
+    --turquesa: #0BD4BC;
+    --branco: #FFFFFF;
+
+    --fonte: "Space Grotesk", sans-serif;
+    --borda: 3px solid;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--preto);
+    font-family: var(--fonte);
+    color: var(--branco);
+    line-height: 1.5;
+}
+
+header{
+    background-color: var(--magenta);
+    padding: 16px 24px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+nav a {
+  display: block;       /* link vira bloco para aceitar padding e borda por completo */
+  background-color: var(--branco);
+  color: var(--preto);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 8px 14px;
+  border: var(--borda) var(--preto);
+}
+
+input{
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 12px;
+    background-color: var(--preto);
+    color: var(--branco);
+}
+
+#busca:focus {
+  outline-color: var(--branco);
+}
+
+input:focus
+{
+    outline: 3px solid var(--turquesa);
+    outline-offset: 1px;
+}
+
+#busca {
+  background-color: var(--preto);
+  color: var(--);
+  border-color: var(--preto);
+  width: 260px;
+}
+
+#busca {
+  background-color: var(--preto);
+  color: var(--branco);
+  border-color: var(--preto);
+  width: 260px;
+}
+

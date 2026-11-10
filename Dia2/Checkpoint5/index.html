@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<!-- 
+  MAINboxd - Projeto da Capacitação HTML5 & CSS3 (MAIN Empresa Júnior)
+  Cada comentário [HTML] ou [CSS] indica um conceito do guia teórico.
+-->
+<!--
+  CHECKPOINT 5 (Dia 2 - CSS): header + seções 1 a 4 (resenhas). Falta só o footer.
+  As partes ainda sem estilo continuam iguais ao base.html.
+-->
+<html lang="pt-br">
+<head>
+  <!-- [HTML] METADADOS: charset (acentos) e viewport (responsividade no celular) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAINboxd | Filmes, séries, livros e jogos da MAIN</title>
+
+  <!-- Fonte Space Grotesk (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- tag para estilização a partir do arquivo style.css -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ========== HEADER (elemento de BLOCO semântico) ========== -->
+  <header>
+    <!-- [HTML] <h1>: só existe UM por página. O <span> é INLINE: serve para colorir só um pedaço do texto. -->
+    <h1 class="logo">MAIN<span>boxd</span></h1>
+
+    <!-- [HTML] <nav> agrupa os links principais. <ul>/<li> = lista não ordenada, <a> = hiperlink -->
+    <nav>
+      <ul>
+        <li><a href="#recomendadas">Mídias Catalogadas</a></li>
+        <li><a href="#atividade">Diário</a></li>
+        <li><a href="#nova-midia">Membros</a></li>
+      </ul>
+    </nav>
+
+    <!-- [HTML] <input> é um elemento VAZIO (sem tag de fechamento). [CSS] #busca usa seletor de ID -->
+    <input type="text" id="busca" placeholder="🔍 Buscar obra...">
+  </header>
+
+  <!-- ========== MAIN: conteúdo principal, com 4 seções ========== -->
+  <main>
+
+    <!-- ---------- SEÇÃO 1: vitrine em CSS Grid (fundo preto) ---------- -->
+    <section id="recomendadas" class="secao">
+      <div class="conteudo">
+        <h2>Mídias recomendadas para você</h2>
+        <!-- [HTML] INLINE dentro de BLOCO: <strong> e <em> ficam na mesma linha do <p> -->
+        <p class="subtitulo">
+          Escolhidas pelos <strong>membros da MAIN</strong>, com <em>muito carinho</em> e zero algoritmo.
+        </p>
+
+        <!-- [HTML] Lista ORDENADA (<ol>): aqui a ordem importa, é um ranking -->
+        <h3>Mais bem avaliadas da semana</h3>
+        <ol class="ranking">
+          <li>Interestelar</li>
+          <li>Hollow Knight</li>
+          <li>Arcane</li>
+        </ol>
+
+        <!-- [CSS] Este contêiner usa display: grid (veja .vitrine no style.css) -->
+        <div class="vitrine">
+
+          <!-- [HTML] <article>: conteúdo independente, que faria sentido sozinho -->
+          <article class="card">
+            <!-- [HTML] <img> é elemento VAZIO: precisa de src (caminho) e alt (descrição) -->
+            <!-- [HTML] <a> em volta da imagem: clicar no pôster leva para outra página (href = destino) -->
+            <a href="../../Filme.html">
+              <img src="https://placehold.co/300x450/0BD4BC/171717?text=Interestelar" alt="Pôster do filme Interestelar">
+            </a>
+            <span class="midia-classificacao">Filme</span>
+            <h4>Interestelar</h4>
+            <p>Christopher Nolan, 2014</p>
+          </article>
+
+          <article class="card">
+            <a href="../../Filme.html">
+              <img src="https://placehold.co/300x450/D900B1/FFFFFF?text=Cidade+de+Deus" alt="Pôster do filme Cidade de Deus">
+            </a>
+            <span class="midia-classificacao">Filme</span>
+            <h4>Cidade de Deus</h4>
+            <p>Fernando Meirelles, 2002</p>
+          </article>
+
+          <article class="card">
+            <a href="../../Filme.html">
+              <img src="https://placehold.co/300x450/171717/0BD4BC?text=Dark" alt="Pôster da série Dark">
+            </a>
+            <span class="midia-classificacao">Série</span>
+            <h4>Dark</h4>
+            <p>Netflix, 2017</p>
+          </article>
+
+          <article class="card">
+            <a href="../../Filme.html">
+              <img src="https://placehold.co/300x450/0BD4BC/171717?text=Arcane" alt="Pôster da série Arcane">
+            </a>
+            <span class="midia-classificacao">Série</span>
+            <h4>Arcane</h4>
+            <p>Fortiche, 2021</p>
+          </article>
+
+          <article class="card">
+            <a href="../../Filme.html">
+              <img src="https://placehold.co/300x450/D900B1/FFFFFF?text=Duna" alt="Capa do livro Duna">
+            </a>
+            <span class="midia-classificacao">Livro</span>
+            <h4>Duna</h4>
+            <p>Frank Herbert, 1965</p>
+          </article>
+
+          <article class="card">
+            <a href="../../Filme.html">
+              <img src="https://placehold.co/300x450/171717/0BD4BC?text=Clean+Code" alt="Capa do livro Código Limpo">
+            </a>
+            <span class="midia-classificacao">Livro</span>
+            <h4>Código Limpo</h4>
+            <p>Robert C. Martin, 2008</p>
+          </article>
+
+          <article class="card">
+            <a href="../../Filme.html">
+              <img src="https://placehold.co/300x450/0BD4BC/171717?text=Hollow+Knight" alt="Arte do jogo Hollow Knight">
+            </a>
+            <span class="midia-classificacao">Jogo</span>
+            <h4>Hollow Knight</h4>
+            <p>Team Cherry, 2017</p>
+          </article>
+
+          <article class="card">
+            <a href="../../Filme.html">
+              <img src="https://placehold.co/300x450/D900B1/FFFFFF?text=Stardew+Valley" alt="Arte do jogo Stardew Valley">
+            </a>
+            <span class="midia-classificacao">Jogo</span>
+            <h4>Stardew Valley</h4>
+            <p>ConcernedApe, 2016</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- SEÇÃO 2: tabela (fundo branco) ---------- -->
+    <section id="atividade" class="secao secao-branco">
+      <div class="conteudo">
+        <h2>Atividade recente na plataforma</h2>
+        <p class="subtitulo">O que a galera da MAIN assistiu, leu e jogou nos últimos dias.</p>
+
+        <div class="moldura-tabela">
+          <table>
+            <thead>
+              <tr>
+                <th>Membro</th>
+                <th>Ação / Categoria</th>
+                <th>Obra</th>
+                <th>Nota</th>
+                <th>Data</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- [CSS] :nth-child(even) pinta as linhas pares de outra cor -->
+              <tr>
+                <td>Ana Souza</td>
+                <td>Assistiu (Filme)</td>
+                <td>Interestelar</td>
+                <td class="estrelas">★★★★★</td>
+                <td>24/10/2026</td>
+              </tr>
+              <tr>
+                <td>Bruno Lima</td>
+                <td>Leu (Livro)</td>
+                <td>Duna</td>
+                <td class="estrelas">★★★★☆</td>
+                <td>23/10/2026</td>
+              </tr>
+              <tr>
+                <td>Carla Dias</td>
+                <td>Jogou (Jogo)</td>
+                <td>Hollow Knight</td>
+                <td class="estrelas">★★★★★</td>
+                <td>22/10/2026</td>
+              </tr>
+              <tr>
+                <td>Diego Reis</td>
+                <td>Assistiu (Série)</td>
+                <td>Dark</td>
+                <td class="estrelas">★★★★☆</td>
+                <td>20/10/2026</td>
+              </tr>
+              <tr>
+                <td>Elisa Moura</td>
+                <td>Leu (Livro)</td>
+                <td>Código Limpo</td>
+                <td class="estrelas">★★★☆☆</td>
+                <td>19/10/2026</td>
+              </tr>
+              <tr>
+                <td>Fábio Alves</td>
+                <td>Assistiu (Série)</td>
+                <td>Arcane</td>
+                <td class="estrelas">★★★★★</td>
+                <td>17/10/2026</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- SEÇÃO 3: formulário (fundo turquesa) ---------- -->
+    <section id="nova-midia" class="secao secao-turquesa">
+      <div class="conteudo">
+        <h2>Adicionar nova mídia à base</h2>
+        <p class="subtitulo">Não achou a obra no catálogo? Cadastre ela aqui.</p>
+
+        <!-- [HTML] <form> reúne os campos. [CSS] Flexbox em coluna organiza tudo -->
+        <form action="#" method="post">
+
+          <!-- [HTML] <label for="..."> se liga ao campo pelo id: clicar no texto foca o campo -->
+          <div class="campo">
+            <label for="nome">Nome da obra</label>
+            <input type="text" id="nome" name="nome" placeholder="Ex.: Matrix">
+          </div>
+
+          <div class="campo">
+            <label for="categoria">Categoria</label>
+            <select id="categoria" name="categoria">
+              <option>Filme</option>
+              <option>Série</option>
+              <option>Livro</option>
+              <option>Jogo</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="capa">Capa do pôster</label>
+            <input type="file" id="capa" name="capa">
+          </div>
+
+          <div class="campo">
+            <label for="sinopse">Sinopse</label>
+            <textarea id="sinopse" name="sinopse" rows="4" placeholder="Do que essa obra fala?"></textarea>
+          </div>
+
+          <button type="submit" class="botao">Cadastrar obra</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ---------- SEÇÃO 4: resenhas expansíveis (fundo magenta) ---------- -->
+    <section id="resenhas" class="secao secao-magenta">
+      <div class="conteudo">
+        <h2>Resenhas da comunidade</h2>
+        <p class="subtitulo">Clique em uma resenha para ler completa.</p>
+
+        <!-- [HTML] <details> + <summary>: acordeão nativo, sem JavaScript -->
+        <details class="resenha">
+          <summary>
+            <span>Ana Souza em <strong>Interestelar</strong></span>
+          </summary>
+          <div class="resenha-corpo">
+            <p>Um filme que mistura ciência, emoção e uma trilha sonora que arrepia. A cena do tempo no
+               primeiro planeta me deixou sem ar. Vale rever mais de uma vez.</p>
+            <p class="resenha-data-avaliacao"><strong>Nota: ★★★★★</strong> <span>24/10/2026</span></p>
+          </div>
+        </details>
+
+        <details class="resenha">
+          <summary>
+            <span>Bruno Lima em <strong>Duna</strong></span>
+          </summary>
+          <div class="resenha-corpo">
+            <p>O começo é lento e cheio de nomes, mas o mundo é tão bem construído que compensa. Política,
+               religião e ecologia no mesmo livro.</p>
+            <p class="resenha-data-avaliacao"><strong>Nota: ★★★★☆</strong> <span>23/10/2026</span></p>
+          </div>
+        </details>
+
+        <details class="resenha">
+          <summary>
+            <span>Carla Dias em <strong>Hollow Knight</strong></span>
+          </summary>
+          <div class="resenha-corpo">
+            <p>Difícil, bonito e melancólico. Cada área tem uma identidade própria e a exploração é
+               recompensadora. Preparem a paciência com os chefes.</p>
+            <p class="resenha-data-avaliacao"><strong>Nota: ★★★★★</strong> <span>22/10/2026</span></p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+      <h3>MAINbox</h3>
+      <p >
+        Desenvolvido na Capacitação HTML/CSS<br>
+        MAIN Empresa Júnior
+      </p>
+
+    <!-- _blank abre o link em uma nova aba -->
+    <ul>
+      <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+      <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+      <li><a href="https://github.com" target="_blank">GitHub</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>

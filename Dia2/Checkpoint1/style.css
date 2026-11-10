@@ -1,0 +1,91 @@
+/* =====================================================
+   MAINboxd - style.css (Checkpoint 1 do Dia 2)
+   Estilo neo-brutalista: bordas grossas, sombras duras
+   e seções bem separadas por cor.
+   ===================================================== */
+
+/* ---------- VARIÁVEIS (paleta da MAIN) ----------
+   :root guarda valores reutilizáveis. Para mudar uma cor
+   do site inteiro, basta mudar aqui. */
+:root {
+  --preto: #171717;
+  --magenta: #D900B1;
+  --turquesa: #0BD4BC;
+  --branco: #FFFFFF;
+
+  --fonte: "Space Grotesk", sans-serif;
+  --borda: 3px solid;
+}
+
+/* ---------- RESET E BASE ----------
+   * (seletor universal) pega TODOS os elementos.
+   box-sizing: border-box faz width/height já contarem o padding e a borda. */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--preto);
+  font-family: var(--fonte);
+  color: var(--branco);
+  line-height: 1.5;
+}
+
+/* ---------- HEADER (fundo magenta) ----------
+   FLEXBOX: justify-content alinha no eixo horizontal,
+   align-items alinha no eixo vertical. */
+header {
+  background-color: var(--magenta);
+  padding: 16px 24px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;     /* tira as bolinhas da lista */
+  gap: 32px;
+}
+
+nav a {
+  display: block;       /* link vira bloco para aceitar padding e borda por completo */
+  background-color: var(--branco);
+  color: var(--preto);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 8px 14px;
+  border: var(--borda) var(--preto);
+}
+
+/* ESPECIFICIDADE: primeiro estilizamos TODOS os inputs pela TAG... */
+input {
+  font-family: inherit;   /* campos não herdam a fonte sozinhos */
+  font-size: 1rem;
+  padding: 12px;
+  background-color: var(--preto);
+  color: var(--branco);
+}
+
+/* PSEUDO-CLASSE :focus = campo selecionado (clicado ou via Tab) */
+input:focus {
+  outline: 3px solid var(--turquesa);
+  outline-offset: 1px;
+}
+
+/* ...e o #busca (ID) vence a regra de tag, porque ID tem prioridade maior.
+   Por isso o contorno da busca fica BRANCO e não turquesa. */
+#busca {
+  background-color: var(--preto);
+  color: var(--branco);
+  border-color: var(--preto);
+  width: 260px;
+}
+
+#busca:focus {
+  outline-color: var(--branco);
+}
